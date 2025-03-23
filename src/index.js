@@ -63,7 +63,7 @@ scene.add(rectLight2);
 // Chargement du modèle 3D
 const loaderS = new GLTFLoader();
 let labScene;
-loaderS.load('assets/labo.glb', (gltf) => {
+loaderS.load('/labo.glb', (gltf) => {
     gltf.scene.traverse((child) => {
         if (child.isMesh) {
             child.castShadow = true;
@@ -119,7 +119,7 @@ const loadObject = (path, position, scale) => {
 const button = `<button class="close-info-frame"><i class="fa-solid fa-arrow-left"></i></button>`
 
 // Charger les objets
-loadObject('assets/bocal_atome.glb', { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1 });
+loadObject('/bocal_atome.glb', { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1 });
 createCubeAtPosition({ x: 2, y: 1.2, z: 7 }, { x: 0.5, y: 0.8, z: 0.5 },{ x: 1.5, y: 1.2, z: 6 }, { x: 1.5, y: 1.2, z: 7 }, `<div class="text-container">
         <h2>La recherche atomique</h2>
         <p>Les découvertes de Marie Curie ont posé les bases de la recherche atomique moderne. En isolant le radium et en étudiant la radioactivité, un terme qu’elle a elle-même introduit, elle a révolutionné la compréhension de la structure de la matière. Ses travaux ont démontré que les atomes n’étaient pas indivisibles, mais pouvaient se transformer en émettant de l’énergie, ouvrant ainsi la voie à la physique nucléaire. Cette avancée a inspiré des générations de scientifiques et a conduit au développement de nombreuses applications, de la radiothérapie au nucléaire civil. Son héritage scientifique a profondément marqué l’histoire de la recherche atomique, influençant des figures majeures comme Ernest Rutherford et les pionniers de la fission nucléaire.</p>
@@ -129,23 +129,23 @@ createCubeAtPosition({ x: 2, y: 1.2, z: 7 }, { x: 0.5, y: 0.8, z: 0.5 },{ x: 1.5
     );  // Bocal à atome
 
 
-loadObject('assets/tableau.glb', { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1 },);
+loadObject('/tableau.glb', { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1 },);
 
-loadObject('assets/microscope.glb', { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1 });
+loadObject('/microscope.glb', { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1 });
 createCubeAtPosition({ x: 5.7, y: 1.3, z: -3.2 }, { x: 0.5, y: 0.7, z: 0.6 }, { x: 6, y: 1.3, z: -2.2 },{ x: 6, y: 1.3, z: -3.2 } , `<div class="text-container">
         <h2>Marie Curie et le microscope : observer l’invisible</h2>
         <p>Bien que principalement connue pour ses travaux sur la radioactivité, Marie Curie a également utilisé le microscope pour analyser les effets des radiations sur la matière et les cellules vivantes. Cet instrument lui permettait d’observer les modifications microscopiques causées par l’exposition aux substances radioactives, ouvrant ainsi la voie aux premières études sur l’impact biologique des rayonnements. Grâce à ces observations, elle a contribué à la compréhension des effets de la radioactivité sur les tissus, une avancée essentielle pour le développement futur de la radiothérapie. Le microscope, en révélant l’invisible, a ainsi joué un rôle complémentaire aux découvertes majeures de Marie Curie, renforçant l’importance de ses recherches dans les domaines de la physique, de la chimie et de la médecine.</p>
         ${button}
     </div>`); // Microscope
 
-loadObject('assets/electrometre.glb', { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1 });
+loadObject('/electrometre.glb', { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1 });
 createCubeAtPosition({ x: 0.7, y: 1.5, z: 1.7 }, { x: 0.5, y: 0.7, z: 0.6 },{ x: 1.7, y: 1.4, z:1.3 }, { x: 0.7, y: 1.4, z: 1.3 } , `<div class="text-container">
         <h2>Électromètre à quadrant</h2>
         <p>Marie Curie a utilisé un électromètre à quadrant, un instrument de précision conçu pour mesurer de faibles charges électriques, afin d’étudier la radioactivité. Cet appareil, initialement perfectionné par Pierre Curie et son frère Jacques, a joué un rôle clé dans ses recherches. Grâce à lui, elle a pu quantifier avec précision l’intensité du rayonnement émis par les substances radioactives, ce qui lui a permis d’identifier et d’isoler de nouveaux éléments, comme le radium et le polonium. L’électromètre à quadrant a ainsi été un outil essentiel dans la découverte et la compréhension de la radioactivité, marquant une étape déterminante dans l’histoire de la physique et de la chimie.</p>
         ${button}
     </div>`); // Electromètre
 
-loadObject('assets/compteurgeiger.glb', { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1 });
+loadObject('/compteurgeiger.glb', { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1 });
 createCubeAtPosition({ x: 0.7, y: 1.5, z: 0.7 }, { x: 0.5, y: 0.5, z: 0.6 }, { x: 1.7, y: 1.5, z: 0.5 }, { x: 0.7, y: 1.5, z: 0.5 } , `<div class="text-container">
         <h2>le Compteur Geiger</h2>
         <p>Marie Curie, pionnière de la radioactivité, a ouvert la voie à de nombreuses avancées scientifiques, dont la détection des rayonnements ionisants. Si elle n’a pas directement inventé le compteur Geiger, ses travaux sur le radium et le polonium ont été essentiels à la compréhension de la radioactivité, rendant possible la conception d’instruments capables de la mesurer. Le compteur Geiger, mis au point plus tard par Hans Geiger et Walther Müller, repose sur les principes qu’elle a établis. Cet appareil permet de détecter et quantifier les particules émises par des substances radioactives, une avancée cruciale pour la science, la médecine et la sécurité nucléaire. Ainsi, l’héritage de Marie Curie dépasse ses découvertes : il s’étend aux outils qui, encore aujourd’hui, permettent d’explorer et de comprendre le monde invisible de la radioactivité.</p>

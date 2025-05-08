@@ -1,6 +1,5 @@
 import * as THREE from "three";
 import { GLTFLoader } from "../node_modules/three/examples/jsm/loaders/GLTFLoader.js";
-import { RectAreaLightHelper } from "three/examples/jsm/helpers/RectAreaLightHelper.js";
 
 // Responsive
 const onResize = () => {
@@ -25,6 +24,8 @@ renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 document.body.appendChild(renderer.domElement);
 
+
+
 const createLight = (color, position, intensity, distance = 0, castShadow = true) => {
     const light = new THREE.PointLight(color, intensity, distance);
     light.position.set(position.x, position.y, position.z);
@@ -44,9 +45,6 @@ const light3 = createLight(0xffffff, { x: 0.8, y: 1.3, z: 1.7 }, 1, 2,false);
 const light4 = createLight(0xffffff, { x: 0.8, y: 1.5, z: 0.8 }, 1, 2,false);
 const light5 = createLight(0xffffff, { x: 1.5, y: 1.3, z: -2.5 }, 1, 2,false);
 const light6 = createLight(0xffffff, { x: 5.7, y: 1.3, z: -2.5 }, 1, 2,false);
-
-const lightHelper = new THREE.PointLightHelper(light1);
-scene.add(lightHelper);
 
 const rectLight = new THREE.RectAreaLight(0xffffff, 1, 10, 10);
 rectLight.position.set(2, 5, 2);
@@ -116,7 +114,7 @@ const loadObject = (path, position, scale) => {
     });
 };
 
-const button = `<button class="close-info-frame"><i class="fa-solid fa-arrow-left"></i></button>`
+const button = `<button class="close-info-frame">Fermer la fenêtre</button>`
 
 // Charger les objets
 loadObject('/bocal_atome.glb', { x: 0, y: 0, z: 0 }, { x: 1, y: 1, z: 1 });
@@ -327,6 +325,7 @@ document.addEventListener('click', onClick);
 
 const clock = new THREE.Clock();
 const animate = () => {
+    console.log("animate called"); 
     const delta = clock.getDelta();
     if (!isCameraLocked) {
         moveCamera(delta); 

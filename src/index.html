@@ -1,31 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three.js starter</title>
+    <title>Le laboratoire - Marie Curie l'exposition</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/textures/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
     
     <script defer type="module" src="index.js"></script>
-    <script defer src="script.js"></script>
 </head>
 
 <body>
     <nav>
-        <a href=""><img src="/textures/logo.png" alt="Accueil"></a>
-        <a class="gallery">Revenir à la gallerie</a>
-        <a class="billeterie" href="">billetterie</a>
-    </nav>
+        <a href="https://exposition.marie-curie-ombres-lumieres.fr 
+        "><img src="/textures/logo.png" alt="Accueil"></a>
+        <a class="billeterie" href="https://exposition.marie-curie-ombres-lumieres.fr/billeterie">billetterie</a>
+      </nav>
+      <div class="intro-pop-up">
+        <div class="symbole">
+          <i class="fa-solid fa-arrow-left"></i>
+          <i class="fa-solid fa-computer-mouse"></i>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <p>Déplacer la vue avec la souris / trackpad<br> Vous pouvez vous déplacer avec Z/Q/S/D</p>
+
+        <button id="start" class="laboratory-start" onclick="start()">Commencer la visite</button>
+
+      </div>
       <div id="cursor"></div>
       <div class="info-objet">
         <div class="info-objet-container">
-
+          
         </div>
       </div>
+      <nav class="navigation2">
+        <a href="https://gallery.marie-curie-ombres-lumieres.fr" class="gallery">Revenir à la galerie</a>
+      </nav>
+      <script>
+        function openPopUp() {
+    popUp = document.querySelector('.info-pop-up');
+    popUp.style.opacity = "1";
+    popUp.style.zIndex = "999"
+}
+function closePopUp() {
+    popUp = document.querySelector('.info-pop-up');
+    popUp.style.opacity = "0";
+    popUp.style.zIndex = "-1"
+}
+
+function start() {
+    introBloc = document.querySelector('.intro-pop-up');
+    introBloc.style.display = "none";
+    galleryButton = document.querySelector('.gallery');
+    galleryButton.style.opacity = "1";
+    cursor = document.getElementById('cursor');
+    cursor.style.opacity = "1";
+
+}
+      </script>
 </body>
 </html>

@@ -25,6 +25,7 @@ body
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none; /* Pour que le curseur n'interfère pas avec les événements de clic */
+    opacity: 0;
   }
 
 .info-objet { 
@@ -66,29 +67,6 @@ body
     font-size: 2.5rem;
 }
 
-.info-objet button {
-    margin-top: 20px;
-    width: fit-content;
-    font-size: 2rem;
-    background-color: transparent;
-    border: solid transparent;
-    color: white;
-    border-radius: 32px;
-}
-
-.info-objet button:hover {
-    animation: arrow 0.5s ease-in-out alternate-reverse infinite forwards;
-}
-
-
-@keyframes arrow {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-10px);
-    }
-}
 
 nav {
     display: flex;
@@ -115,17 +93,33 @@ nav a:hover {
 }
 
 .billeterie {
+    font-size: 1.5rem;
     height: fit-content;
     color: white;
     text-decoration: none;
 }
+
+.navigation2 {
+    top: 80%;
+}
+
 .gallery {
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
     height: fit-content;
     color: black;
     text-decoration: none;
     padding: 15px 20px;
     background-color: white;
     border-radius: 32px;
+    transition: all 0.2s ease-out;
+    opacity: 0;
+}
+
+.gallery:hover {
+    transform: translateX(-50%) scale(1.1);
 }
 
 .info {
@@ -173,12 +167,15 @@ nav a:hover {
 .close-info-frame {
     width: fit-content;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
     background-color: transparent;
     border: transparent 3px solid;
-    padding: 5px 10px;
+    padding: 5px 0px;
     transition: border 0.3s ease-out;
     border-radius: 100%;
+}
+.close-info-frame:hover {
+    text-decoration: underline;
 }
 
 .pop-up-container button:hover {
@@ -228,4 +225,41 @@ nav a:hover {
     bottom: 15px;
     font-size: 1.5rem;
     width: fit-content;
+}
+
+.intro-pop-up {
+    background-color: rgba(0,0,0);
+    color: white;
+    z-index: 100;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.intro-pop-up p {
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.symbole {
+    font-size: 2rem;
+}
+
+.laboratory-start {
+    background-color: white;
+    border: transparent;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 32px;
+    z-index: 999;
+}
+
+.laboratory-start:hover {
+    background-color: black;
+    color: white;
 }
